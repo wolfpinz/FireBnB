@@ -7,10 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Flat.destroy_all
+User.destroy_all
+
 puts 'creating 3 flats'
+
+User.create(
+  first_name: 'Karl',
+  last_name: 'Wagon',
+  email: 'me@me.com',
+  password: '123456',
+  password_confirmation: '123456'
+)
 
 3.times do
   Flat.create(
+    user: User.last,
+    title: Faker::Movies::HarryPotter.location,
     user_id: 1,
     city: Faker::Address.city,
     street: Faker::Address.street_address,
