@@ -21,15 +21,16 @@ User.create(
 )
 
 3.times do
-  Flat.create(
+  flat = Flat.create(
     user: User.last,
     title: Faker::Movies::HarryPotter.location,
-    user_id: 1,
+    # user_id: 1,
     city: Faker::Address.city,
     street: Faker::Address.street_address,
     price_per_night: rand(500...10_000),
     description: Faker::Food.description
   )
+  p flat
 end
 
 puts 'finished'
