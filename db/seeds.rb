@@ -11,9 +11,10 @@ puts 'creating 3 flats'
 
 3.times do
   Flat.create({
+    user_id: 1,
     city: Faker::Address.city,
     street: Faker::Address.street_address,
-    price_per_night: rand(500...10000),
+    price_per_night: rand(500...10_000),
     description: Faker::Food.description
   })
 end
