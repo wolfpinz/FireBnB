@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :flats
 
+  validates :first_name, :last_name, presence: true
 end
