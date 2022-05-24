@@ -1,3 +1,8 @@
-<h1>The flats' index</h1>
-
-<%= @flats.each %>
+<h1>All flats</h1>
+<ul>
+  <% @flats.each do |flat| %>
+    <li><p><%= flat.description %></p>
+    <p>Address:<%= flat.street %>in<%= flat.city %></p>
+    <p><%= flat.price_per_night %></p></li>
+  <% end %>
+</ul>
