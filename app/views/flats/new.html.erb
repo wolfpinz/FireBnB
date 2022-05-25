@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
+    <%= link_to "Back to all flats", flats_path %>
     <div class="col-6">
-    <% if policy(Flat).new? %>
       <h1>Create a new flat</h1>
       <%= simple_form_for @flat do |l| %>
         <%= l.input :title %>
@@ -11,10 +11,6 @@
         <%= l.input :price_per_night %>
         <%= l.submit class: 'btn btn-primary' %>
       <% end %>
-    <% else %>
-      <p>Please login to create a flat </p>
-    <% end %>
-      <%= link_to "Back to all flats", flats_path %>
     </div>
   </div>
 </div>
