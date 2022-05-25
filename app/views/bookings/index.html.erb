@@ -1,18 +1,16 @@
 <div class="container">
-  <h1 class="text-center justify-content-center">My Bookings</h1>
+  <h1 class="text-center">My Bookings</h1>
 
-  <body class="justify-content-center">
-    <div class="">
+  <body>
       <ul >
-        <div class="d-flex flex-row  justify-content-around text-center">
+        <div class="text-center">
           <% @bookings.each do |booking| %>
             <div class="card p-2 m-3 border-0 rounded shadow-sm" style="width: 40%;" >
-              <h4 class="card-title p-2"><%= booking.flat %></h4>
-              <p class="card-text"><%= booking.start_date %>/<%= booking.end_date %></p>
+              <h4 class="card-title p-2"><%= booking.flat.title %></h4>
+              <p class="card-text"><%= booking.start_date %>/ <%= booking.end_date %></p>
           </div>
           <% end %>
         </div>
       </ul>
-    </div>
   </body>
 </div>
