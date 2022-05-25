@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1>Create a new flat</h1>
+      <%= simple_form_for @flat do |l| %>
+        <%= l.input :title %>
+        <%= l.input :description %>
+        <%= l.input :city %>
+        <%= l.input :street %>
+        <%= l.input :price_per_night %>
+        <%= l.submit class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to "Back to all flats", flats_path %>
+    </div>
+  </div>
+</div>
