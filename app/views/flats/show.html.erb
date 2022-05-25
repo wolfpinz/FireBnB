@@ -1,10 +1,17 @@
-<h2><%= @flat.title %></h2>
-<h2><%= @flat.city %></h2>
-<h2><%= @flat.street %></h2>
-<h2><%= @flat.price_per_night %></h2>
-<h2><%= @flat.description %></h2>
-
+<div class="text-center ">
+  <h1><%= @flat.title %></h1>
+  <br>
+  <h4><%= @flat.city %></h4>
+  <h4><%= @flat.street %></h4>
+  <h4><%= @flat.price_per_night %></h4>
+    <div class="font-weight-light">
+    <p><%= @flat.description %></p>
+    </div>
+</div>
+<br>
+<div class="text-center">
 <h2>Book your flat here </h2>
+</div>
 <%= simple_form_for [@flat, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
