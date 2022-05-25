@@ -6,10 +6,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @flat = Flat.find(params[:id])
-    @booking = Booking.create(params_booking)
-    @booking.flat_id = @flat
-    @booking.user_id = 1
+    @flat = Flat.find(params[:flat_id])
+    @booking = Booking.new(params_booking)
+    @booking.flat = @flat
+    @booking.user = current_user
     @booking.save
 
     redirect_to flats_path
@@ -18,6 +18,6 @@ class BookingsController < ApplicationController
   private
 
   def params_booking
-    params.require(:bookings).permit(:start_date, :end_date, :status)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end
