@@ -6,7 +6,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params_booking)
+    @flat = Flat.find(params[:id])
+    @booking = Booking.create(params_booking)
+    @booking.flat_id = @flat
+    @booking.user_id = 1
     @booking.save
 
     redirect_to flats_path
