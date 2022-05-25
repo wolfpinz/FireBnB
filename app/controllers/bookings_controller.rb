@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.save
 
-    redirect_to flats_path
+    redirect_to user_bookings_path(@booking)
   end
 
   private
