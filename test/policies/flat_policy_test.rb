@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FlatsPolicyTest < ActiveSupport::TestCase
+class FlatPolicyTest < ActiveSupport::TestCase
   def test_scope
   end
 

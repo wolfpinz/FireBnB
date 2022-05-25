@@ -3,9 +3,11 @@ class FlatsController < ApplicationController
   # Daniel show
   # Lara index
   # Wolf new, create
-  skip_before_action :authenticate_user!, except: [:create]
+  skip_before_action :authenticate_user! # , except: [:index, :show, :new, :create]
   before_action :set_flat, only: [:show]
+
   def index
+    @flats = policy_scope(Flat)
     @flats = Flat.all
   end
 
@@ -14,10 +16,13 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
-    @flat = Flat.create!(flat_params)
+    @flat = Flat.new(flat_params)
+    @flat.user = current_user
+    authorize @flat
 
     if @flat.save
       redirect_to flats_path
@@ -30,6 +35,7 @@ class FlatsController < ApplicationController
 
   def set_flat
     @flat = Flat.find(params[:id])
+    authorize @flat
   end
 
   def flat_params
