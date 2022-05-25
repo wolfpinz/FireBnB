@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!
 
   def index
+    @bookings = policy_scope(Booking)
     @bookings = Booking.all
   end
 
@@ -11,6 +12,7 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.user = current_user
     @booking.save
+    authorize @booking
 
     redirect_to user_bookings_path(@booking)
   end
