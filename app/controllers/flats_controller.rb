@@ -24,8 +24,8 @@ class FlatsController < ApplicationController
     @flat.user = current_user
     authorize @flat
 
-    if @flat.save
-      redirect_to flats_path
+    if @flat.save!
+      redirect_to flat_path(@flat)
     else
       render :new
     end
