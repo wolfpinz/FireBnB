@@ -5,17 +5,15 @@
 
 <body class="">
     <ul class="container">
-      <div class="flex-row d-flex align-content-end text-center">
+      <div class="flex-row d-flex align-content-center text-center">
         <% @flats.each do |flat| %>
           <div class="card d-flex p-2 m-3 border-0 rounded shadow-sm justify-content-top" style="width: 40%;" >
-            <h4 class="card-title p-2"><%= flat.title %></h4>
+            <h4 class="card-title align-top"><%= flat.title %></h4>
             <p class="card-text"><%= flat.description %></p>
             <p>Address: <%= flat.street %> in <%= flat.city %></p>
             <p>Price/Night: <%= flat.price_per_night %>€</p>
-            <div class="">
             <%= link_to "Show", flat_path(flat), class: "btn btn-primary text-decoration-none" %>
-            </div>
-        </div>
+          </div>
         <% end %>
       </div>
     </ul>
