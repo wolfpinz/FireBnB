@@ -3,3 +3,11 @@
 <h2><%= @flat.street %></h2>
 <h2><%= @flat.price_per_night %></h2>
 <h2><%= @flat.description %></h2>
+
+<h2>Book your flat here </h2>
+<%= simple_form_for [@flat, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+
+<% end %>
