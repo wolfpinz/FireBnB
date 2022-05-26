@@ -1,27 +1,29 @@
 <div class="container" style="width: 70%">
   <div class="d-flex m-2 justify-content-between">
-    <div class="column card p-3" style="width: 70%">
+    <div class="column card border-0 p-3" style="width: 70%">
 
       <div class="d-flex justify-content-between">
         <%= cl_image_tag @flat.photo.key, height: 300, width: 400, crop: :fill %>
 
 
         <div class="text-end">
-          <h4><%= @flat.price_per_night %> €</h4>
-          <h4><%= @flat.city %>/ <%= @flat.street %></h4>
+          <h4>Price/ Night: </h4>
+          <p><%= @flat.price_per_night %> €</p>
+          <h4>Address: </h4>
+          <p><%= @flat.street %>/ <%= @flat.city %></p>
         </div>
       </div>
 
           <h1 class="pt-3 mt-2 border-top"><%= @flat.title %></h1>
-              <p class="font-weight-light pt-2 mt-2 border-top"><%= @flat.description %></p>
+              <p class="pt-2 mt-2 border-top"><%= @flat.description %></p>
     </div>
 
-    <div class="d-felx column p-3 card">
+    <div class="d-felx column p-3 card border-0">
       <h2>Book your flat here </h2>
       <%= simple_form_for [@flat, @booking] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
-        <%= f.submit %>
+        <%= f.button :submit, "Book now", class: "algin-self-center btn btn-primary"%>
 
       <% end %>
     </div>
