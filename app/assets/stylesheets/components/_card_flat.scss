@@ -1,15 +1,13 @@
 .card-flat {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: auto;
     img {
-      height: 300px;
+      height: 250px;
       width: 100%;
       object-fit: cover;
+      border-radius: 16px;
     }
 }
-
 
 .card-flat h2 {
   font-size: 16px;
@@ -25,7 +23,7 @@
 
 
 .card-flat .card-flat-infos {
-  padding: 16px;
+  padding: 16px 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
