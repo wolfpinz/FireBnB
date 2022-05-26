@@ -1,0 +1,31 @@
+.card-flat {
+  overflow: hidden;
+  width: auto;
+    img {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+}
+
+.card-flat h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-flat p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-flat .card-flat-infos {
+  padding: 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
