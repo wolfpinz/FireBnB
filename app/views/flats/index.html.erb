@@ -1,20 +1,29 @@
 
-<div class="container">
-  <h1 class="text-center p-3">Flat index</h1>
-</div>
 
-<body>
-    <ul class="container">
-      <div class="flex-row d-flex align-content-center text-center">
-        <% @flats.each do |flat| %>
-          <div class="card d-flex p-2 m-3 border-0 rounded shadow-sm  justify-content-between" style="width: 40%;" >
-            <h4 class="card-title pt-3 pb-3"><%= flat.title %></h4>
-            <p class="card-text pb-3"><%= flat.description %></p>
-            <p class="align-self-start"><strong>Address: </strong><%= flat.street %> in <%= flat.city %></p>
-            <p class="align-self-start"><strong>Price/Night: </strong><%= flat.price_per_night %>€</p>
-            <%= link_to "Show", flat_path(flat), class: "btn btn-primary text-decoration-none" %>
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+  <% end %>
+
+  <h1 class="text-center p-3">Flat index</h1>
+
+<div class="container">
+  <div class="cards">
+    <% @flats.each do |flat| %>
+      <div class="card-flat">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-flat-infos">
+          <div>
+            <h2><%= flat.title %></h2>
+            <p><%= "Short description here!" %></p>
           </div>
-        <% end %>
+          <h2 class="card-flat-pricing"><%= flat.price_per_night %></h2>
+        </div>
       </div>
-    </ul>
-</body>
+    <% end %>
+</div>
+</div>

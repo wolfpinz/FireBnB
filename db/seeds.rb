@@ -20,16 +20,24 @@ User.create(
   password_confirmation: '123456'
 )
 
-3.times do
-  flat = Flat.create(
-    user: User.last,
-    title: Faker::Movies::HarryPotter.location,
-    city: Faker::Address.city,
-    street: Faker::Address.street_address,
-    price_per_night: rand(500...10_000),
-    description: Faker::Food.description
-  )
-  p flat
-end
+# 3.times do
+#   flat = Flat.create(
+#     user: User.last,
+#     title: Faker::Movies::HarryPotter.location,
+#     city: Faker::Address.city,
+#     street: Faker::Address.street_address,
+#     price_per_night: rand(500...10_000),
+#     description: Faker::Food.description
+#   )
+#   p flat
+# end
+# Flat.create(
+#   user: User.last,
+#   title: ,
+#   city: ,
+#   street: ,
+#   description: ,
+#   price_per_night: rand(500...10_000),
+# )
 
 puts 'finished'
