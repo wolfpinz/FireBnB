@@ -1,23 +1,38 @@
-<div class="container d-flex" style="width: 50%">
+<div class="container" style="width: 70%">
+  <div class="d-flex m-2 justify-content-between">
+    <div class="column card p-3" style="width: 70%">
 
-  <div class="column card p-3 mr-auto">
+      <div class="d-flex justify-content-between">
+        <%= cl_image_tag @flat.photo.key, height: 300, width: 400, crop: :fill %>
 
-    <%= cl_image_tag @flat.photo.key, height: 300, width: 400, crop: :fill %>
-      <h1><%= @flat.title %></h1>
-      <h4><%= @flat.city %></h4>
-      <h4><%= @flat.street %></h4>
-      <h4><%= @flat.price_per_night %></h4>
-          <p class="font-weight-light"><%= @flat.description %></p>
 
+        <div class="text-end">
+          <h4><%= @flat.price_per_night %> €</h4>
+          <h4><%= @flat.city %>/ <%= @flat.street %></h4>
+        </div>
+      </div>
+
+          <h1 class="pt-3 mt-2 border-top"><%= @flat.title %></h1>
+              <p class="font-weight-light pt-2 mt-2 border-top"><%= @flat.description %></p>
+    </div>
+
+    <div class="d-felx column p-3 card">
+      <h2>Book your flat here </h2>
+      <%= simple_form_for [@flat, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit %>
+
+      <% end %>
+    </div>
   </div>
 
-  <div class="d-felx column p-3 card">
-    <h2>Book your flat here </h2>
-    <%= simple_form_for [@flat, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit %>
-
-    <% end %>
+  <div class="p-2 mt-2">
+    <div style="width: 100%; height: 300px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
 </div>
