@@ -1,23 +1,23 @@
-<div class="text-center ">
-<%= cl_image_tag @flat.photo.key, height: 300, width: 400, crop: :fill %>
-  <h1><%= @flat.title %></h1>
-  <br>
-  <h4><%= @flat.city %></h4>
-  <h4><%= @flat.street %></h4>
-  <h4><%= @flat.price_per_night %></h4>
-    <div class="font-weight-light">
-    <p><%= @flat.description %></p>
-    </div>
+<div class="container d-flex" style="width: 50%">
+
+  <div class="column align-content-center card p-3">
+
+    <%= cl_image_tag @flat.photo.key, height: 300, width: 400, crop: :fill %>
+      <h1><%= @flat.title %></h1>
+      <h4><%= @flat.city %></h4>
+      <h4><%= @flat.street %></h4>
+      <h4><%= @flat.price_per_night %></h4>
+          <p class="font-weight-light"><%= @flat.description %></p>
+
+  </div>
+
+  <div class="d-felx column align-content-center p-3 card">
+    <h2>Book your flat here </h2>
+    <%= simple_form_for [@flat, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit %>
+
+    <% end %>
+  </div>
 </div>
-<br>
-<div class="text-center">
-
-
-<h2>Book your flat here </h2>
-</div>
-<%= simple_form_for [@flat, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-
-<% end %>
