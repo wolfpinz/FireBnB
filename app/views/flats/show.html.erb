@@ -1,6 +1,6 @@
 <div class="container d-flex" style="width: 50%">
 
-  <div class="column align-content-center card p-3">
+  <div class="column card p-3 mr-auto">
 
     <%= cl_image_tag @flat.photo.key, height: 300, width: 400, crop: :fill %>
       <h1><%= @flat.title %></h1>
@@ -11,7 +11,7 @@
 
   </div>
 
-  <div class="d-felx column align-content-center p-3 card">
+  <div class="d-felx column p-3 card">
     <h2>Book your flat here </h2>
     <%= simple_form_for [@flat, @booking] do |f| %>
       <%= f.input :start_date %>
