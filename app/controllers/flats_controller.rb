@@ -1,8 +1,4 @@
 class FlatsController < ApplicationController
-  # create views for index, show and create
-  # Daniel show
-  # Lara index
-  # Wolf new, create
   skip_before_action :authenticate_user! # , except: [:index, :show, :new, :create]
   before_action :set_flat, only: [:show]
 
