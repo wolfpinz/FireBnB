@@ -1,6 +1,7 @@
 .card-flat {
   overflow: hidden;
   width: auto;
+  border-radius: 16px;
     img {
       height: 250px;
       width: 100%;
@@ -11,6 +12,12 @@
 
 .card-flat h2 {
   font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-flat h3 {
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
 }
@@ -28,4 +35,12 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.cards a {
+  color: black;
+  text-decoration: none;
+    :hover {
+      color: black;
+    }
 }
