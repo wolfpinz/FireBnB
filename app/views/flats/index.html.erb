@@ -14,11 +14,11 @@
     <% @flats.each do |flat| %>
     <%= link_to flat_path(flat) do %>
       <div class="card-flat">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <%= cl_image_tag flat.photo.key %>
         <div class="card-flat-infos">
           <div>
             <h2><%= flat.title %></h2>
-            <p><%= "Short description here!" %></p>
+            <p><%= "#{flat.description.first(30)}..." %></p>
             <h3 class="card-flat-pricing"><%= "€#{flat.price_per_night} / night" %></h3>
           </div>
         </div>
