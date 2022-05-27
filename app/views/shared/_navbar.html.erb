@@ -12,10 +12,17 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+          <li class="nav-item">
+            <%= link_to "Become a host", new_flat_path, class: "nav-link" %>
+          </li>
             <%= link_to "All Flats", flats_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <%= link_to "My Bookings", user_bookings_path(current_user), class: "nav-link" %>
+=======
+            <%# <%= link_to "My Bookings", user_bookings_path(@current_user), class: "nav-link" %>
+>>>>>>> 4d5e4de8e1affd6378dcbc74c1781231b166db21
           </li>
           <li class="nav-item dropdown">
             <%# <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> %>
